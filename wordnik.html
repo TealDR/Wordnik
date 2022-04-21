@@ -1,0 +1,20 @@
+<html>
+<head>
+<title>TEST</title>
+</head>
+
+<body>
+<button onClick="generateWord()">Generate Word</button>
+<span id="word">EMPTY.</span>
+</body>
+
+<script>
+const wordnik = 'https://api.wordnik.com/v4/words.json/randomWords?hasDictionaryDef=true&includePartOfSpeech=noun%2Cnoun-plural%2Cnoun-singular&excludePartOfSpeech=given-name%2Cfamily-name&minCorpusCount=5000&maxCorpusCount=-1&minDictionaryCount=1&maxDictionaryCount=-1&minLength=5&maxLength=5&limit=1&api_key='
+const wordnikkey = '' //add key
+var word = 'Empty'
+
+function generateWord() {
+	word = fetch(wordnik + wordnikkey)
+	document.getElementById("word").innerHTML = word;
+}
+</script>
